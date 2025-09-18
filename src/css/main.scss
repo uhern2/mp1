@@ -1,1 +1,48 @@
 /* Your SCSS here. */
+#navbar {
+    position: sticky;
+    top: 0;
+    background-color: tan;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    transition: height 0.3s ease, padding 0.3s ease;
+    border: 2px solid black;
+    width: 100%;
+}
+
+#navbar a {
+    color: azure;
+    text-align: center;
+    text-decoration: none;
+    padding: 1rem;
+    font-size: xx-large;
+    background-color: transparent;
+    flex: none;
+    transition: height 0.3s ease, padding 0.3s ease;
+}
+
+#navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+#navbar.shrink {
+    height: 60px;
+
+    a {
+        font-size: large;
+        padding: 0.5rem;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+section {
+    min-height: 100vh;
+    padding: 4rem 2rem;
+}
