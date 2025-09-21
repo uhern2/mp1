@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MP1</title>
+        
+    </head>
+    <body>
+        <div id="navbar">
+                <a href="#MyCity">My City</a>
+                <a href="#music">My Music</a>
+                <a href="#education">Education</a>
+                <a href="#video">Video</a>
+        </div>
+        
+        <section id="MyCity">
+            <h2>CHICAGO</h2>
+        </section>
+
+        <section id="music">
+            <h2>My Music</h2>
+            <div class="carousel">
+                <div class="slides">
+                    <img src="./assets/song1.jpeg" alt="Moth To A Flame By The Weeknd and Swedish House Mafia">
+                    <img src="./assets/song2.jpeg" alt="Mira Nomas by Eslabon Armado">
+                    <img src="./assets/song3.jpeg" alt="Alambre Pua By Bad Bunny">
+                    <img src="./assets/song4.jpeg" alt="Lavender Sunflower By Tory Lanez">
+                    <img src="./assets/song5.jpeg" alt="Open Hearts By The Weeknd">
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>My Education Journey</h2>
+            <div class="grid">
+                <div class="item">
+                    <h3>High School</h3>
+                    <p> Eric Solorio Academy High School</p>
+                    <p>Graduated: 2023</p>
+                    <img src="./assets/Screen Shot 2020-12-09 at 12.36.19 PM.webp" 
+                    alt="High School" 
+                    class="openModal" 
+                    data-target="HighSchool">
+                </div>
+                <div class="item">
+                    <h3>Community College</h3>
+                    <p>Richard J. Daley Community College</p>
+                    <p>Graduated: 2023</p>
+                    <img src="./assets/richard-j-daley-college-campus-chicago-illinois-j071124-t-1.webp" 
+                    alt="College" 
+                    class="openModal" 
+                    data-target="College">
+                </div>
+                <div class="item">
+                    <h3>University-Undergrad</h3>
+                    <p>University of Illinois Urbana-Champaign</p>
+                    <p>Currently: Junior</p>
+                    <img src="./assets/HowtoGetIntoUIUC-scaled.jpg" 
+                    alt="University" 
+                    class="openModal" 
+                    data-target="University">
+                </div>
+            </div>
+
+            <div id="HighSchool" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h3>Eric Solorio Academy High School</h3>
+                    <img src="./assets/Screen Shot 2020-12-09 at 12.36.19 PM.webp" alt="High School">
+                </div>
+            </div>
+            <div id="College" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h3>Richard J. Daley Community College</h3>
+                    <img src="./assets/richard-j-daley-college-campus-chicago-illinois-j071124-t-1.webp" alt="College">
+                </div>
+            </div>
+            <div id="University" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h3>University of Illinois Urbana-Champaign</h3>
+                    <img src="./assets/HowtoGetIntoUIUC-scaled.jpg" alt="University">
+                </div>
+            </div>
+        </section>
+
+        <section id="video">
+            <h2>Video</h2>
+            <video width="640" height="360" autoplay loop muted>
+                <source src="./assets/AAC7E265-15C9-4B80-8029-BB3902CAE72D.mp4" type="video/mp4">
+
+            </video>
+        </section>
+    </body>
+</html>
