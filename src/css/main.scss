@@ -1,6 +1,6 @@
 /* Your SCSS here. */
 #navbar {
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -13,7 +13,7 @@
     border: 2px solid black;
     width: 100%;
     box-sizing: border-box;
-    z-index: 4;
+    z-index: 10;
 }
 
 #navbar a {
@@ -26,6 +26,12 @@
     flex: none;
     transition: height 0.3s ease, padding 0.3s ease;
     
+}
+
+#navbar a.active {
+    color: black;
+    background-color: #ddd;
+    border-radius: 5px;
 }
 
 #navbar a:hover {
@@ -51,40 +57,53 @@ body {
     margin: 0;
     padding: 0;
     height: 1500px;
+    padding-top: 120px;
     font-family: Arial, sans-serif;
 }
 body::before {
+    content: none;
+}
+
+section {
+    min-height: auto;
+    padding: 4rem 2rem;
+    margin-top: 160px;
+}
+
+#MyCity {
+    background-attachment: fixed;
+    position: relative;
+    text-align: center;
+    min-height: 600px;
+    background-image: url('../assets/Chicago_Skyline_in_April_2024.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#MyCity::before {
     content: "";
     position: absolute;
-    top:  400px;            
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100% ;
-    height: 600px;
-    background-image: url('../assets/Chicago_Skyline_in_April_2024.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;      
-    opacity: 0.4;     
-    border: 5px solid black;           
-    z-index: 0;  
-    
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.4); 
 }
 
-body > .onimg {
-    position: absolute;
-    z-index: 1;
-    top: 550px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    margin: 50px auto;
-    text-align: center;
+#MyCity h2 {
+    position: relative;
     color: white;
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: bold;
+    z-index: 1; 
+    margin: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
+#music {
+    text-align: center;
+}
 .carousel {
     width: 80%;
     max-width: 800px;
@@ -92,6 +111,7 @@ body > .onimg {
     overflow: hidden;
     border: 3px solid black;
     border-radius: 10px;
+    z-index: 3;
 
     .slides{
         display: flex;
@@ -118,16 +138,90 @@ body > .onimg {
 }
 
 
-section {
-    min-height: 100vh;
+#education {
     padding: 4rem 2rem;
+    text-align: center;
+
+    .grid{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 10px;
+        margin-top: 2rem;
+    }
+
+    .item{
+        background-color: lightgray;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        text-align: center;
+    }
 }
 
-#MyCity {
+#education .item img {
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+#education .item img:hover {
+    transform: scale(1.05);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 3; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 2px solid black;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative; 
+}
+
+.modal-content img{
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: #fff; 
+    cursor: pointer; 
+}
+.close:hover{
+    color: black;
+}
+
+#video {
+    padding: 4rem 2rem;
     text-align: center;
 }
-#music {
-    text-align: center;
+
+#video video {
+    display: block;
+    margin: 0 auto; 
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
 }
 
 .container {
