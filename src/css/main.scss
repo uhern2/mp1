@@ -8,9 +8,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 120px;
+    height: 8vh;
     transition: height 0.3s ease, padding 0.3s ease;
-    border: 2px solid black;
+    border: 0.2rem solid black;
     width: 100%;
     box-sizing: border-box;
     z-index: 10;
@@ -21,7 +21,7 @@
     text-align: center;
     text-decoration: none;
     padding: 1rem;
-    font-size: xx-large;
+    font-size: clamp(1.2rem,2vw,2rem);
     background-color: transparent;
     flex: none;
     transition: height 0.3s ease, padding 0.3s ease;
@@ -31,7 +31,7 @@
 #navbar a.active {
     color: black;
     background-color: #ddd;
-    border-radius: 5px;
+    border-radius: 0.5rem;
 }
 
 #navbar a:hover {
@@ -40,10 +40,10 @@
 }
 
 #navbar.shrink {
-    height: 60px;
+    height: 5vh;
 
     a {
-        font-size: large;
+        font-size: clamp(0.8rem,1.5vw,1.5rem);
         padding: 0.5rem;
     }
 }
@@ -53,28 +53,28 @@ html {
 }
 
 body {
-    position: relative;
     margin: 0;
     padding: 0;
-    height: 1500px;
-    padding-top: 120px;
+    padding-top: 8vh;
     font-family: Arial, sans-serif;
 }
-body::before {
-    content: none;
-}
+
 
 section {
-    min-height: auto;
-    padding: 4rem 2rem;
-    margin-top: 160px;
+    min-height: 80vh;
+    padding: 4vh 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
 }
 
 #MyCity {
     background-attachment: fixed;
     position: relative;
     text-align: center;
-    min-height: 600px;
+    min-height: 60vh;
     background-image: url('../assets/Chicago_Skyline_in_April_2024.jpg');
     background-size: cover;
     background-position: center;
@@ -93,50 +93,67 @@ section {
 #MyCity h2 {
     position: relative;
     color: white;
-    font-size: 3rem;
+    font-size: clamp(2rem,5vw,3rem);
     font-weight: bold;
     z-index: 1; 
     margin: 0;
-    top: 50%;
-    transform: translateY(-50%);
 }
 
 #music {
     text-align: center;
 }
+
 .carousel {
-    width: 80%;
-    max-width: 800px;
+    position: relative;
+    width: 50%;
+    max-width: 1200px;
     margin: 2rem auto;
     overflow: hidden;
     border: 3px solid black;
-    border-radius: 10px;
+    border-radius: 1rem;
     z-index: 3;
+    height: auto;
+}
 
-    .slides{
+.slides{
         display: flex;
-        width: clac(100% * 5);
-        animation: slide 15s linear infinite;
-        img {
-            width: 100%;
-            flex-shrink: 0;
-        }
+        transition: transform 0.5s ease-in-out;
     }
 
+.slides img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    flex-shrink: 0;
 }
 
-@keyframes slide {
-    0%   { transform: translateX(0); }
-    20%  { transform: translateX(0); }
-    25%  { transform: translateX(-100%); }
-    45%  { transform: translateX(-100%); }
-    50%  { transform: translateX(-200%); }
-    70%  { transform: translateX(-200%); }
-    75%  { transform: translateX(-300%); }
-    95%  { transform: translateX(-300%); }
-    100% { transform: translateX(0); }
+.carousel button.prev,
+.carousel button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: clamp(1.5rem,3vw,2rem);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    z-index: 5;
 }
 
+
+.carousel button.prev {
+    left: 1%;
+}
+
+.carousel button.next {
+    right: 1%;
+}
+
+.carousel button:hover {
+    background-color: rgba(0,0,0,0.7);
+}
 
 #education {
     padding: 4rem 2rem;
@@ -145,24 +162,24 @@ section {
     .grid{
         display: grid;
         grid-template-columns: repeat(3,1fr);
-        gap: 10px;
-        margin-top: 2rem;
+        gap: 2vw;
+        margin: 2rem auto;
     }
 
     .item{
         background-color: lightgray;
-        padding: 1rem;
-        border-radius: 8px;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        padding: 2vw;
+        border-radius: 0.8rem;
+        box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
         text-align: center;
     }
 }
 
 #education .item img {
     width: 100%;
-    max-height: 150px;
+    max-height: 30vh;
     object-fit: cover;
-    border-radius: 5px;
+    border-radius: 0.5rem;
     cursor: pointer;
     transition: transform 0.2s ease;
 }
@@ -186,28 +203,29 @@ section {
 
 .modal-content {
     background-color: #fefefe;
-    margin: 10% auto;
-    padding: 20px;
-    border: 2px solid black;
+    margin: 5vh auto;
+    padding: 2vw;
+    border: 0.2rem solid black;
     width: 80%;
-    max-width: 500px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    max-width: 40vw;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.3);
     position: relative; 
 }
 
 .modal-content img{
     width: 100%;
     height: auto;
-    border-radius: 8px;
+    border-radius: 0.5rem;
 }
 
 .close {
     position: absolute;
-    top: 20px;
-    right: 40px;
-    color: #fff; 
+    top: 1vh;
+    right: 2vw;
+    color: #000000; 
     cursor: pointer; 
+    font-size: clamp(1.5rem, 2vw, 2.5rem);
 }
 .close:hover{
     color: black;
@@ -221,7 +239,21 @@ section {
 #video video {
     display: block;
     margin: 0 auto; 
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+}
+
+#footer{
+    background-color: tan;
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 1.5rem;
+    border-top: 0.2rem solid black;
+    margin-top: 2rem;
+}
+
+#footer a {
+    color: white;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .container {
@@ -229,3 +261,4 @@ section {
     max-width: 1200px;
     margin: 0 auto;
 }
+
