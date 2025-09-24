@@ -1,6 +1,7 @@
 /* Your JS here. */
 console.log('Hello World!')
 
+//current section code
 document.addEventListener('DOMContentLoaded', () => {
     const links = document.querySelectorAll('#navbar a');
     const sections = Array.from(links).map(link => document.querySelector(link.getAttribute('href')));
@@ -31,6 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
     highlightcurr();
 });
 
+
+//helps shrink navbar when scrolling down
 window.addEventListener("scroll", function(){
     const navbar = document.getElementById("navbar");
     if(window.scrollY > 70){
@@ -41,6 +44,8 @@ window.addEventListener("scroll", function(){
 });
 
 
+
+//carousel
 const slides = document.querySelector('.carousel .slides');
 const slideImages = document.querySelectorAll('.carousel .slides img');
 const prev = document.querySelector('.carousel .prev');
@@ -57,6 +62,8 @@ function show(index){
     slides.style.transform = `translateX(-${ind * 100}%)`;
 }
 
+
+//modal
 prev.addEventListener('click', () => show(ind - 1));
 next.addEventListener('click', () => show(ind + 1));
 
